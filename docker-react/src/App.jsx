@@ -1,31 +1,11 @@
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import AddTask from "./components/AddTask";
-import TaskList from "./components/TaskList";
 
-function App() {
-  const [tasks, setTasks] = useState([]);
+import React from "react";
 
-  const addTask = (task) => {
-    setTasks([...tasks, task]);
-  };
-
-  const deleteTask = (index) => {
-    const newTasks = tasks.filter((_, i) => i !== index);
-    setTasks(newTasks);
-  };
-
+export default function App() {
   return (
-    <div>
-      <Navbar />
-      <div className="container mt-4">
-        <h2 className="text-center mb-4">Task Manager</h2>
-        <AddTask addTask={addTask} />
-        <TaskList tasks={tasks} deleteTask={deleteTask} />
-      </div>
+    <div className="container">
+      <h1>Task Management System</h1>
+      <p>Initial scaffold — components to be added in later tasks.</p>
     </div>
   );
 }
-
-export default App;
-  
